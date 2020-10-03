@@ -28,7 +28,7 @@ export default class Setup extends React.Component {
 
   render() {
     if (!this.state.isReady) {
-      return <Splash />;
+      return <Expo.AppLoading />;
     }
     return <App />;
   }

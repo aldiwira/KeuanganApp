@@ -3,18 +3,23 @@ import { Root } from "native-base";
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from "@react-navigation/native";
 
-import { Home } from "./screens/";
+import { Home, Splash } from "./screens/";
 
 const stack = createStackNavigator();
 
-export default () => {
+const App = () => {
   return (
-    <Root>
-      <NavigationContainer>
-        <stack.Navigator initialRouteName='Home'>
-          <stack.Screen name='Home' component={Home} />
-        </stack.Navigator>
-      </NavigationContainer>
-    </Root>
+    <NavigationContainer>
+      <stack.Navigator initialRouteName='Splash'>
+        <stack.Screen
+          name='Splash'
+          component={Splash}
+          options={{ headerShown: false }}
+        />
+        <stack.Screen name='Home' component={Home} />
+      </stack.Navigator>
+    </NavigationContainer>
   );
 };
+
+export default App;
