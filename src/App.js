@@ -9,16 +9,22 @@ const stack = createStackNavigator();
 
 const App = () => {
   return (
-    <NavigationContainer>
-      <stack.Navigator initialRouteName='Splash'>
-        <stack.Screen
-          name='Splash'
-          component={Splash}
-          options={{ headerShown: false }}
-        />
-        <stack.Screen name='Home' component={Home} />
-      </stack.Navigator>
-    </NavigationContainer>
+    <Root>
+      <NavigationContainer>
+        <stack.Navigator initialRouteName="Splash">
+          <stack.Screen
+            name="Splash"
+            component={Splash}
+            options={{ headerShown: false }}
+          />
+          <stack.Screen
+            name="Home"
+            component={Home}
+            options={{ headerShown: false }}
+          />
+        </stack.Navigator>
+      </NavigationContainer>
+    </Root>
   );
 };
 

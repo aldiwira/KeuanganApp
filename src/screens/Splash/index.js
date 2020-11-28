@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { StyleSheet } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { Container, Content, Text, Footer } from "native-base";
