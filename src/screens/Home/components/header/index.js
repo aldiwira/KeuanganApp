@@ -1,13 +1,12 @@
 import React from "react";
 import { StyleSheet, TouchableHighlight } from "react-native";
-import { Grid, Row, H1, H3, Icon, Text, Toast } from "native-base";
+import { Grid, Row, H1, H3, Icon, Text, Toast, View } from "native-base";
 import colors from "../../../../config/colors";
 import grtis from "../../../../config/Greatings";
-import icons from "react-native-vector-icons";
 
-const Header = () => {
+const index = () => {
   return (
-    <Row style={styles.rowWrapper}>
+    <View style={styles.rowWrapper}>
       <H1 style={styles.textHead}>Keuanganku</H1>
       <H3 style={styles.textGreat}>{grtis()}</H3>
       <Row style={styles.btnWrapper}>
@@ -30,11 +29,11 @@ const Header = () => {
           <Text>Refresh</Text>
         </Grid>
       </Row>
-    </Row>
+    </View>
   );
 };
 
-export default Header;
+export default index;
 
 const styles = StyleSheet.create({
   btnItemWrap: {
@@ -45,15 +44,11 @@ const styles = StyleSheet.create({
   },
   btnWrapper: {
     backgroundColor: colors.colorWhite,
-    marginVertical: 20,
-    borderRadius: 20,
+    marginVertical: 10,
+    borderRadius: 15,
     flex: 1,
   },
   rowWrapper: {
-    backgroundColor: colors.colorBlueNTSC,
-    borderBottomRightRadius: 20,
-    borderBottomLeftRadius: 20,
-    padding: 20,
     flex: 1,
     flexDirection: "column",
   },
