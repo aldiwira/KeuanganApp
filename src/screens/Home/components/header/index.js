@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, TouchableHighlight } from "react-native";
+import { StyleSheet } from "react-native";
 import { Grid, Row, H1, H3, Icon, Text, Toast, View } from "native-base";
 import colors from "../../../../config/colors";
 import grtis from "../../../../config/Greatings";
@@ -10,23 +10,17 @@ const index = () => {
       <H1 style={styles.textHead}>Keuanganku</H1>
       <H3 style={styles.textGreat}>{grtis()}</H3>
       <Row style={styles.btnWrapper}>
-        <Grid
-          onTouchStart={() => {
-            Toast.show({ text: "Add" });
-          }}
-          style={styles.btnItemWrap}
-        >
-          <Icon name="add" />
-          <Text>Add</Text>
+        <Grid style={styles.btnItemWrap}>
+          <Text style={{ fontWeight: "bold" }}>Pemasukan</Text>
+          <Text style={{ marginTop: 5 }}>Rp.999.999.999</Text>
         </Grid>
-        <Grid
-          onTouchStart={() => {
-            Toast.show({ text: "Sync" });
-          }}
-          style={styles.btnItemWrap}
-        >
-          <Icon name="sync" />
-          <Text>Refresh</Text>
+        <Grid style={styles.btnItemWrap}>
+          <Text style={{ fontWeight: "bold" }}>Pengeluaran</Text>
+          <Text style={{ marginTop: 5 }}>Rp.999.999.999</Text>
+        </Grid>
+        <Grid style={styles.btnItemWrap}>
+          <Text style={{ fontWeight: "bold" }}>Sisa</Text>
+          <Text style={{ marginTop: 5 }}>Rp.999.999.999</Text>
         </Grid>
       </Row>
     </View>
@@ -44,7 +38,7 @@ const styles = StyleSheet.create({
   },
   btnWrapper: {
     backgroundColor: colors.colorWhite,
-    marginVertical: 10,
+    marginTop: 15,
     borderRadius: 15,
     flex: 1,
   },

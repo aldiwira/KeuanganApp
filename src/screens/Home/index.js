@@ -9,6 +9,9 @@ import {
   Text,
   Grid,
   Row,
+  Right,
+  Icon,
+  Left,
 } from "native-base";
 import colors from "../../config/colors";
 import Iheader from "./components/header";
@@ -28,16 +31,24 @@ const index = () => {
   return (
     <Container style={{ flex: 1, marginTop: 20 }}>
       <Header style={{ backgroundColor: colors.colorBlueNTSC }}>
-        <Body style={{ alignItems: "center" }}>
+        <Left>
+          <Icon
+            type="MaterialCommunityIcons"
+            name="menu"
+            style={{ color: "white" }}
+          />
+        </Left>
+        <Body style={{ flex: 2 }}>
           <Title>Home</Title>
         </Body>
       </Header>
       <Content style={{ flex: 1 }} contentContainerStyle={{ flex: 1 }}>
+        <StatusBar backgroundColor={colors.colorBlueNTSC} />
         <Grid>
           <Row style={styles.wrapperOne}>
             <Iheader />
           </Row>
-          <Row size={3} style={styles.wrapperTwo}>
+          <Row size={4} style={styles.wrapperTwo}>
             <Icontent />
           </Row>
         </Grid>
@@ -53,7 +64,8 @@ const styles = StyleSheet.create({
     backgroundColor: colors.colorBlueNTSC,
     borderBottomRightRadius: 20,
     borderBottomLeftRadius: 20,
-    padding: 20,
+    paddingHorizontal: 20,
+    paddingVertical: 30,
     flex: 1,
     flexDirection: "column",
   },
