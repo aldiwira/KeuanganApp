@@ -2,9 +2,10 @@ const greatings = () => {
   let mDate = new Date();
   let hrs = mDate.getHours();
 
-  if (hrs < 12) return "Good Morning";
-  else if (hrs >= 12 && hrs <= 17) return "Good Afternoon";
-  else if (hrs >= 17 && hrs <= 24) return "Good Evening";
+  if (hrs < 9) return "Selamat Pagi";
+  else if (hrs >= 9 && hrs <= 15) return "Selamat Siang";
+  else if (hrs >= 15 && hrs <= 18) return "Selamat Sore";
+  else if (hrs >= 18 && hrs <= 24) return "Selamat Malam";
 };
 
 module.exports = greatings;
