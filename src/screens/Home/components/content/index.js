@@ -11,6 +11,7 @@ const index = ({ navigation }) => {
       <Fab
         onPress={() => {
           Toast.show({ text: "Add comming soon", type: "success" });
+          navigation.navigate("addRecord");
         }}
         style={{ backgroundColor: colors.colorBlueNTSC }}
         position="bottomRight"

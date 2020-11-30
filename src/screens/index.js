@@ -1,4 +1,5 @@
-import Home from "./Home";
-import Splash from "./Splash";
+import home from "./Home";
+import splash from "./Splash";
+import addRecord from "./AddRecord";
 
-export { Home, Splash };
+export { home, splash, addRecord };

@@ -3,7 +3,7 @@ import { Root } from "native-base";
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from "@react-navigation/native";
 
-import { Home, Splash } from "./screens/";
+import { home, splash, addRecord } from "./screens/";
 
 const stack = createStackNavigator();
 
@@ -14,12 +14,17 @@ const App = () => {
         <stack.Navigator initialRouteName="Splash">
           <stack.Screen
             name="Splash"
-            component={Splash}
+            component={splash}
             options={{ headerShown: false }}
           />
           <stack.Screen
             name="Home"
-            component={Home}
+            component={home}
+            options={{ headerShown: false }}
+          />
+          <stack.Screen
+            name="addRecord"
+            component={addRecord}
             options={{ headerShown: false }}
           />
         </stack.Navigator>
