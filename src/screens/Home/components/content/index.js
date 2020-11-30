@@ -1,10 +1,24 @@
 import React from "react";
-import { StyleSheet, TouchableHighlight } from "react-native";
-import { Grid, Row, H1, H3, Icon, Text, Toast } from "native-base";
+import { H1, View, Fab, Icon, Toast } from "native-base";
 import colors from "../../../../config/colors";
 
-const index = () => {
-  return <H1>Hello</H1>;
+const index = ({ navigation }) => {
+  return (
+    <View style={{ flex: 1 }}>
+      <View style={{ flex: 1, padding: 20 }}>
+        <H1>Keuangan Hari ini</H1>
+      </View>
+      <Fab
+        onPress={() => {
+          Toast.show({ text: "Add comming soon", type: "success" });
+        }}
+        style={{ backgroundColor: colors.colorBlueNTSC }}
+        position="bottomRight"
+      >
+        <Icon name="add" />
+      </Fab>
+    </View>
+  );
 };
 
 export default index;

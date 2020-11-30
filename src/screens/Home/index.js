@@ -6,10 +6,8 @@ import {
   Content,
   Body,
   Title,
-  Text,
   Grid,
   Row,
-  Right,
   Icon,
   Left,
 } from "native-base";
@@ -17,7 +15,7 @@ import colors from "../../config/colors";
 import Iheader from "./components/header";
 import Icontent from "./components/content";
 
-const index = () => {
+const index = (props) => {
   useEffect(() => {
     const backAction = () => {
       BackHandler.exitApp();
@@ -46,10 +44,10 @@ const index = () => {
         <StatusBar backgroundColor={colors.colorBlueNTSC} />
         <Grid>
           <Row style={styles.wrapperOne}>
-            <Iheader />
+            <Iheader {...props} />
           </Row>
           <Row size={4} style={styles.wrapperTwo}>
-            <Icontent />
+            <Icontent {...props} />
           </Row>
         </Grid>
       </Content>
@@ -69,7 +67,5 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "column",
   },
-  wrapperTwo: {
-    padding: 20,
-  },
+  wrapperTwo: {},
 });
