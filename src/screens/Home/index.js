@@ -6,11 +6,11 @@ import {
   Content,
   Body,
   Title,
-  Grid,
-  Row,
   Icon,
   Left,
+  View,
 } from "native-base";
+
 import colors from "../../config/colors";
 import Iheader from "./components/header";
 import Icontent from "./components/content";
@@ -42,14 +42,14 @@ const index = (props) => {
       </Header>
       <Content style={{ flex: 1 }} contentContainerStyle={{ flex: 1 }}>
         <StatusBar backgroundColor={colors.colorBlueNTSC} />
-        <Grid>
-          <Row style={styles.wrapperOne}>
+        <View style={styles.wrapperMain}>
+          <View style={styles.wrapperHeader}>
             <Iheader {...props} />
-          </Row>
-          <Row size={4} style={styles.wrapperTwo}>
+          </View>
+          <View style={styles.wrapperContent}>
             <Icontent {...props} />
-          </Row>
-        </Grid>
+          </View>
+        </View>
       </Content>
     </Container>
   );
@@ -58,14 +58,14 @@ const index = (props) => {
 export default index;
 
 const styles = StyleSheet.create({
-  wrapperOne: {
-    backgroundColor: colors.colorBlueNTSC,
-    borderBottomRightRadius: 20,
-    borderBottomLeftRadius: 20,
-    paddingHorizontal: 20,
-    paddingVertical: 30,
+  wrapperMain: {
+    flex: 1,
+  },
+  wrapperHeader: {
     flex: 1,
     flexDirection: "column",
   },
-  wrapperTwo: {},
+  wrapperContent: {
+    flex: 3,
+  },
 });

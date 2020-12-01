@@ -1,28 +1,32 @@
 import React from "react";
 import { StyleSheet } from "react-native";
-import { Grid, Row, H1, H3, Icon, Text, Toast, View } from "native-base";
+import { Grid, Row, Text, View } from "native-base";
+import { responsiveFontSize } from "react-native-responsive-dimensions";
+
 import colors from "../../../../config/colors";
 import grtis from "../../../../config/Greatings";
 
 const index = () => {
   return (
-    <View style={styles.rowWrapper}>
-      <H1 style={styles.textHead}>Keuanganku</H1>
-      <H3 style={styles.textGreat}>{grtis()}</H3>
-      <Row style={styles.btnWrapper}>
-        <Grid style={styles.btnItemWrap}>
-          <Text style={{ fontWeight: "bold" }}>Pemasukan</Text>
-          <Text style={{ marginTop: 5 }}>Rp.999.999.999</Text>
-        </Grid>
-        <Grid style={styles.btnItemWrap}>
-          <Text style={{ fontWeight: "bold" }}>Pengeluaran</Text>
-          <Text style={{ marginTop: 5 }}>Rp.999.999.999</Text>
-        </Grid>
-        <Grid style={styles.btnItemWrap}>
-          <Text style={{ fontWeight: "bold" }}>Sisa</Text>
-          <Text style={{ marginTop: 5 }}>Rp.999.999.999</Text>
-        </Grid>
-      </Row>
+    <View style={styles.mainWrapper}>
+      <View style={styles.titleWrapper}>
+        <Text style={styles.textHead}>Keuanganku</Text>
+        <Text style={styles.textGreat}>{grtis()}</Text>
+      </View>
+      <View style={styles.navWrapper}>
+        <View style={styles.btnItemWrap}>
+          <Text style={styles.textNavMain}>Pemasukan</Text>
+          <Text style={styles.textNavSec}>Rp.999.999.999</Text>
+        </View>
+        <View style={styles.btnItemWrap}>
+          <Text style={styles.textNavMain}>Pengeluaran</Text>
+          <Text style={styles.textNavSec}>Rp.999.999.999</Text>
+        </View>
+        <View style={styles.btnItemWrap}>
+          <Text style={styles.textNavMain}>Sisa</Text>
+          <Text style={styles.textNavSec}>Rp.999.999.999</Text>
+        </View>
+      </View>
     </View>
   );
 };
@@ -30,27 +34,41 @@ const index = () => {
 export default index;
 
 const styles = StyleSheet.create({
+  mainWrapper: {
+    flex: 1,
+    backgroundColor: colors.colorBlueNTSC,
+    padding: 15,
+    borderBottomEndRadius: 20,
+  },
+  navWrapper: {
+    flex: 1,
+    flexDirection: "row",
+    backgroundColor: colors.colorWhite,
+    marginVertical: 10,
+    borderRadius: 10,
+  },
+  titleWrapper: {},
   btnItemWrap: {
     flex: 1,
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
   },
-  btnWrapper: {
-    backgroundColor: colors.colorWhite,
-    marginTop: 15,
-    borderRadius: 15,
-    flex: 1,
-  },
-  rowWrapper: {
-    flex: 1,
-    flexDirection: "column",
-  },
   textHead: {
     color: colors.colorWhiteFlat,
     fontWeight: "bold",
+    fontSize: responsiveFontSize(3.5),
   },
   textGreat: {
     color: colors.colorWhiteFlat,
+    fontSize: responsiveFontSize(3),
+  },
+  textNavMain: {
+    fontWeight: "bold",
+    fontSize: responsiveFontSize(2),
+  },
+  textNavSec: {
+    marginTop: 5,
+    fontSize: responsiveFontSize(2),
   },
 });
