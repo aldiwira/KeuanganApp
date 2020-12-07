@@ -16,16 +16,6 @@ import Iheader from "./components/header";
 import Icontent from "./components/content";
 
 const index = (props) => {
-  useEffect(() => {
-    const backAction = () => {
-      BackHandler.exitApp();
-    };
-    const backHandler = BackHandler.addEventListener(
-      "hardwareBackPress",
-      backAction
-    );
-    return () => backHandler.remove();
-  }, []);
   return (
     <Container style={{ flex: 1, marginTop: 20 }}>
       <Header style={{ backgroundColor: colors.colorBlueNTSC }}>
