@@ -11,10 +11,10 @@ const stack = createStackNavigator();
 const App = () => {
   useEffect(() => {
     setTimeout(() => {
-      setisFirst(true);
-    }, 1100);
+      setisFirst(false);
+    }, 1500);
   }, []);
-  const [isFirst, setisFirst] = useState(false);
+  const [isFirst, setisFirst] = useState(true);
 
   return (
     <Root>
@@ -32,11 +32,13 @@ const App = () => {
             headerTintColor: colors.colorWhite,
           }}
         >
-          <stack.Screen
-            name="Splash"
-            component={splash}
-            options={{ headerShown: false }}
-          />
+          {isFirst ? (
+            <stack.Screen
+              name="Splash"
+              component={splash}
+              options={{ headerShown: false }}
+            />
+          ) : null}
           <stack.Screen name="Home" component={home} />
           <stack.Screen
             name="addRecord"
