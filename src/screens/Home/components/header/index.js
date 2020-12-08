@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet } from "react-native";
-import { Grid, Row, Text, View } from "native-base";
+import { Text, View } from "native-base";
 import { responsiveFontSize } from "react-native-responsive-dimensions";
 
 import colors from "../../../../config/colors";

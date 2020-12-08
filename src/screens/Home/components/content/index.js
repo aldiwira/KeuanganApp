@@ -1,19 +1,21 @@
 import React from "react";
-import { H1, View, Fab, Icon, Toast } from "native-base";
+import { StyleSheet } from "react-native";
+import { Text, View, Fab, Icon, Toast } from "native-base";
+import { responsiveFontSize } from "react-native-responsive-dimensions";
+
 import colors from "../../../../config/colors";
 
 const index = ({ navigation }) => {
   return (
     <View style={{ flex: 1 }}>
-      <View style={{ flex: 1, padding: 20 }}>
-        <H1>Keuangan Hari ini</H1>
+      <View style={styles.wrapperContentMain}>
+        <Text>Keuangan Hari ini</Text>
       </View>
       <Fab
         onPress={() => {
-          Toast.show({ text: "Add comming soon", type: "success" });
           navigation.navigate("addRecord");
         }}
-        style={{ backgroundColor: colors.colorBlueNTSC }}
+        style={styles.fabStyle}
         position="bottomRight"
       >
         <Icon name="add" />
@@ -21,5 +23,15 @@ const index = ({ navigation }) => {
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  wrapperContentMain: {
+    flex: 1,
+    margin: 10,
+  },
+  fabStyle: {
+    backgroundColor: colors.colorBlueNTSC,
+  },
+});
 
 export default index;
