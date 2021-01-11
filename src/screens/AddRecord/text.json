@@ -1,0 +1,18 @@
+{
+  "Pengeluaran": {
+    "title": "Pengeluaran",
+    "secTitle": "Catatan untuk pengeluaran anda",
+    "type": [
+      "Makan",
+      "Nongkrong",
+      "Pulsa/Kuota",
+      "Tagihan Listri/PDAM/Internet",
+      "Jajan"
+    ]
+  },
+  "Pemasukan": {
+    "title": "Pemasukan",
+    "secTitle": "Catatan untuk pemasukan anda",
+    "type": ["Gaji", "Hibah", "Bantuan", "Hutang", "Nemu Dijalan"]
+  }
+}
