@@ -1,7 +1,6 @@
 import React, { useEffect, useLayoutEffect } from "react";
-import { BackHandler, StyleSheet } from "react-native";
+import { StyleSheet } from "react-native";
 import { StatusBar } from "expo-status-bar";
-
 import { Container, Content, Icon, View } from "native-base";
 
 import colors from "../../config/colors";

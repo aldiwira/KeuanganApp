@@ -10,21 +10,39 @@ const index = () => {
   return (
     <View style={styles.mainWrapper}>
       <View style={styles.titleWrapper}>
-        <Text style={styles.textHead}>Keuanganku</Text>
-        <Text style={styles.textGreat}>{grtis()}</Text>
+        <Text style={styles.textHead}>{grtis()}</Text>
+        <Text style={styles.textGreat}>Pengeluaran bulan ini</Text>
       </View>
-      <View style={styles.navWrapper}>
-        <View style={styles.btnItemWrap}>
-          <Text style={styles.textNavMain}>Pemasukan</Text>
-          <Text style={styles.textNavSec}>Rp.999.999.999</Text>
+      <View style={{ flex: 1, flexDirection: "row" }}>
+        <View
+          style={{
+            ...styles.navWrapper,
+          }}
+        >
+          <View style={styles.btnItemWrap}>
+            <Text style={styles.textNavMain}>Pemasukan</Text>
+            <Text style={styles.textNavSec}>Rp.1.000.000</Text>
+          </View>
         </View>
-        <View style={styles.btnItemWrap}>
-          <Text style={styles.textNavMain}>Pengeluaran</Text>
-          <Text style={styles.textNavSec}>Rp.999.999.999</Text>
+        <View
+          style={{
+            ...styles.navWrapper,
+          }}
+        >
+          <View style={styles.btnItemWrap}>
+            <Text style={styles.textNavMain}>Pengeluaran</Text>
+            <Text style={styles.textNavSec}>Rp.1.000.000</Text>
+          </View>
         </View>
-        <View style={styles.btnItemWrap}>
-          <Text style={styles.textNavMain}>Sisa</Text>
-          <Text style={styles.textNavSec}>Rp.999.999.999</Text>
+        <View
+          style={{
+            ...styles.navWrapper,
+          }}
+        >
+          <View style={styles.btnItemWrap}>
+            <Text style={styles.textNavMain}>Sisa</Text>
+            <Text style={styles.textNavSec}>Rp.1.000.000</Text>
+          </View>
         </View>
       </View>
     </View>
@@ -37,17 +55,21 @@ const styles = StyleSheet.create({
   mainWrapper: {
     flex: 1,
     backgroundColor: colors.colorBlueNTSC,
-    padding: 15,
     borderBottomEndRadius: 20,
+    padding: 5,
   },
   navWrapper: {
     flex: 1,
     flexDirection: "row",
-    backgroundColor: colors.colorWhite,
-    marginVertical: 10,
+    backgroundColor: colors.colorWhiteFlat,
+    marginHorizontal: 5,
+    marginVertical: 15,
     borderRadius: 10,
   },
-  titleWrapper: {},
+  titleWrapper: {
+    marginBottom: 10,
+    paddingHorizontal: 10,
+  },
   btnItemWrap: {
     flex: 1,
     flexDirection: "column",
@@ -62,6 +84,12 @@ const styles = StyleSheet.create({
   textGreat: {
     color: colors.colorWhiteFlat,
     fontSize: responsiveFontSize(3),
+  },
+  textGreat2: {
+    color: colors.colorWhiteFlat,
+    marginTop: 5,
+    fontStyle: "italic",
+    fontSize: responsiveFontSize(2),
   },
   textNavMain: {
     fontWeight: "bold",
